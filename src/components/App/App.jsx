@@ -36,12 +36,10 @@ const App = () => {
   };
 
   const getVisibleContacts = (contacts, filter) => {
-    const normalizedFilter = filter ? filter.toLowerCase() : '';
-    return contacts && Array.isArray(contacts)
-      ? contacts.filter(contact =>
-          contact.name.toLowerCase().includes(normalizedFilter)
-        )
-      : [];
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
   };
 
   const visibleContacts = getVisibleContacts(contacts, filter);
